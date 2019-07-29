@@ -1,1 +1,30 @@
-<!-- Put the HTML template for your page here! -->
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+<head>
+	<title></title>
+</head>
+<body>
+	{% if opposite_day == False %}
+		<h1> Hello, world!</h1>
+        <p> favorite food </p>
+        <h2> food </h2>
+        <ul>
+            {% for pet in pets %}
+                <li> {{pet}} </li>
+            {% endfor %}
+        </ul>
+
+	{% else %}
+		<h1> Hello, world!</h1>
+        <p> least favorite food </p>
+        <h2> food </h2>
+        <ul>
+            {% for food in foods %}
+                <li> {{food}} </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+</body>
+</html>
